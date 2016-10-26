@@ -4,7 +4,7 @@
           extends="_local"
           name="possibleAnswer-view">
         <property name="question"
-                  view="_minimal"/>
+                  view="question-view"/>
     </view>
     <view class="com.company.survey.entity.survey.SelectedAnswer"
           extends="_local"
@@ -12,7 +12,7 @@
         <property name="question"
                   view="_minimal"/>
         <property name="answer"
-                  view="_minimal"/>
+                  view="possibleAnswer-view"/>
         <property name="filledSurvey"
                   view="_minimal"/>
     </view>
@@ -21,6 +21,8 @@
           name="question-view">
         <property name="possibleAnswers"
                   view="_minimal"/>
+        <property name="category"
+                  view="_local"/>
     </view>
     <view class="com.company.survey.entity.reference.Survey"
           extends="_local"
@@ -36,6 +38,16 @@
         <property name="user"
                   view="_minimal"/>
         <property name="answers"
-                  view="_minimal"/>
+                  view="answer-view">
+        </property>
+    </view>
+    <view class="com.company.survey.entity.reference.Category"
+          extends="_local"
+          name="category-view">
+        <property name="questions"
+                  view="_minimal">
+            <property name="category"
+                      view="_local"/>
+        </property>
     </view>
 </views>

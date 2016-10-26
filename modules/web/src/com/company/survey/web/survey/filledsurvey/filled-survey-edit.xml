@@ -9,9 +9,8 @@
         <datasource id="filledSurveyDs"
                     class="com.company.survey.entity.survey.FilledSurvey"
                     view="filledSurvey-view">
-            <collectionDatasource id="answersDs"
-                                  property="answers">
-            </collectionDatasource>
+            <groupDatasource id="answersDs"
+                             property="answers"/>
         </datasource>
         <collectionDatasource id="possibleAnswersDs"
                               allowCommit="false"
@@ -36,15 +35,17 @@
         </fieldGroup>
         <groupBox id="answersBox"
                   caption="msg://com.company.survey.entity.survey/FilledSurvey.answers">
-            <table id="answersTable"
-                   editable="true"
-                   height="200px"
-                   width="100%">
+            <groupTable id="answersTable"
+                        editable="true"
+                        height="200px"
+                        width="100%">
                 <columns>
+                    <column id="question.category"/>
                     <column id="question"/>
+                    <column id="answer"/>
                 </columns>
                 <rows datasource="answersDs"/>
-            </table>
+            </groupTable>
         </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>

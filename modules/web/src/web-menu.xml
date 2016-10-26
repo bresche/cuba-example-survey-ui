@@ -3,6 +3,9 @@
     <menu id="application"
           insertBefore="administration">
         <item id="survey$FilledSurvey.browse"/>
+        <item id="survey$Question.browse"/>
+        <item id="survey$Category.browse"/>
+        <item id="survey$PossibleAnswer.browse"/>
     </menu>
     <menu id="reference"
           insertBefore="administration">

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.survey.web.possibleanswer.PossibleAnswerBrowse"
+        focusComponent="possibleAnswersTable"
+        lookupComponent="possibleAnswersTable"
+        messagesPack="com.company.survey.web.possibleanswer">
+    <dsContext>
+        <collectionDatasource id="possibleAnswersDs"
+                              class="com.company.survey.entity.reference.PossibleAnswer"
+                              view="possibleAnswer-view">
+            <query>
+                <![CDATA[select e from survey$PossibleAnswer e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="possibleAnswersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="possibleAnswersTable"
+                datasource="possibleAnswersDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="possibleAnswersTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="code"/>
+                <column id="answerText"/>
+                <column id="question"/>
+            </columns>
+            <rows datasource="possibleAnswersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="possibleAnswersTable.create"/>
+                <button id="editBtn"
+                        action="possibleAnswersTable.edit"/>
+                <button id="removeBtn"
+                        action="possibleAnswersTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

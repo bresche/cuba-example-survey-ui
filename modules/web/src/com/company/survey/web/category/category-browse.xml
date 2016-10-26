@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://browseCaption"
-        class="com.company.survey.web.question.QuestionBrowse"
-        focusComponent="questionsTable"
-        lookupComponent="questionsTable"
-        messagesPack="com.company.survey.web.question">
+        class="com.company.survey.web.category.CategoryBrowse"
+        focusComponent="categoriesTable"
+        lookupComponent="categoriesTable"
+        messagesPack="com.company.survey.web.category">
     <dsContext>
-        <collectionDatasource id="questionsDs"
-                              class="com.company.survey.entity.reference.Question"
-                              view="question-view">
+        <collectionDatasource id="categoriesDs"
+                              class="com.company.survey.entity.reference.Category"
+                              view="category-view">
             <query>
-                <![CDATA[select e from survey$Question e]]>
+                <![CDATA[select e from survey$Category e]]>
             </query>
         </collectionDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="questionsTable"
+    <layout expand="categoriesTable"
             spacing="true">
         <filter id="filter"
-                applyTo="questionsTable"
-                datasource="questionsDs">
+                applyTo="categoriesTable"
+                datasource="categoriesDs">
             <properties include=".*"/>
         </filter>
-        <table id="questionsTable"
+        <table id="categoriesTable"
                width="100%">
             <actions>
                 <action id="create"/>
@@ -31,19 +31,18 @@
                 <action id="remove"/>
             </actions>
             <columns>
-                <column id="questionText"/>
-                <column id="category"/>
+                <column id="name"/>
             </columns>
-            <rows datasource="questionsDs"/>
+            <rows datasource="categoriesDs"/>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
                 <button id="createBtn"
-                        action="questionsTable.create"/>
+                        action="categoriesTable.create"/>
                 <button id="editBtn"
-                        action="questionsTable.edit"/>
+                        action="categoriesTable.edit"/>
                 <button id="removeBtn"
-                        action="questionsTable.remove"/>
+                        action="categoriesTable.remove"/>
             </buttonsPanel>
         </table>
     </layout>

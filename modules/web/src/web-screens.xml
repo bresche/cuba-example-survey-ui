@@ -4,7 +4,7 @@
     <screen id="survey$Question.edit"
             template="com/company/survey/web/question/question-edit.xml"/>
     <screen id="survey$PossibleAnswer.edit"
-            template="com/company/survey/web/reference/possibleanswer/possible-answer-edit.xml"/>
+            template="com/company/survey/web/possibleanswer/possible-answer-edit.xml"/>
     <screen id="survey$Question.browse"
             template="com/company/survey/web/question/question-browse.xml"/>
     <screen id="survey$Survey.browse"
@@ -17,4 +17,10 @@
             template="com/company/survey/web/survey/filledsurvey/filled-survey-edit.xml"/>
     <screen id="survey$FilledSurveyOptionsGroup.edit"
             template="com/company/survey/web/survey/filledsurvey/filled-survey-options-group-edit.xml"/>
+    <screen id="survey$Category.browse"
+            template="com/company/survey/web/category/category-browse.xml"/>
+    <screen id="survey$Category.edit"
+            template="com/company/survey/web/category/category-edit.xml"/>
+    <screen id="survey$PossibleAnswer.browse"
+            template="com/company/survey/web/possibleanswer/possible-answer-browse.xml"/>
 </screen-config>

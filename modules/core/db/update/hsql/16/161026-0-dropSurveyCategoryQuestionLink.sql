@@ -1,0 +1,1 @@
+drop table SURVEY_CATEGORY_QUESTION_LINK cascade ;
